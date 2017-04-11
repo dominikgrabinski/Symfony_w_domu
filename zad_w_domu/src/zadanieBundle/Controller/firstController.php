@@ -33,4 +33,14 @@ class firstController extends Controller
         $response = new Response('<html><body>Witaj! '.$name. ' '.$surname.'</body></html>');
         return $response;
     }
+    
+    /**
+     * @Route("/showPost/{id}", requirements = {"id" = "\d+"})
+     */
+    
+    public function showingPostAction($id) {
+        $response = new Response('<html><body>Showing post '.$id.'</body></html>');
+        return $response;
+    }
 }
+
