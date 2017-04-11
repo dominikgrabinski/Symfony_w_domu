@@ -24,4 +24,13 @@ class firstController extends Controller
         $response = new Response('<html><body>Goodbye '.$username.' <body></html>');
         return $response;
     }
+    
+    /**
+     * @Route("/welcome/{name}/{surname}", defaults = {"name" = "Andrzej", "surname" = "Gołota"})
+     */
+    
+    public function welcomeUserAction($name, $surname) {
+        $response = new Response('<html><body>Witaj! '.$name. ' '.$surname.'</body></html>');
+        return $response;
+    }
 }
