@@ -6,10 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Response;
-
-/**
- * @Route("/first")
- */
+use Symfony\Component\HttpFoundation\Request;
+//
+///**
+// * @Route("/first")
+// */
 
 class firstController extends Controller
 {
@@ -62,8 +63,10 @@ class firstController extends Controller
      * @Method("POST")
      */
 
-    public function formPostAction() {
-        $response = new Response('<html><body>Formularz przyjęty</html></body>');
+    public function formPostAction(Request $request) {
+        $request->request->get("text_field");
+
+        $response = new Response('<html><body>Tekst z formularza: '.$request.'</body></html>');
         return $response;
     }
 }
