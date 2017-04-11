@@ -1,0 +1,5 @@
+zadanie:
+    resource: "@zadanieBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
