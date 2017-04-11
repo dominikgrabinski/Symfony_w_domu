@@ -4,6 +4,7 @@ namespace zadanieBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Response;
 
 class firstController extends Controller
@@ -40,6 +41,25 @@ class firstController extends Controller
     
     public function showingPostAction($id) {
         $response = new Response('<html><body>Showing post '.$id.'</body></html>');
+        return $response;
+    }
+    
+    /**
+     * @Route("/form")
+     * @Method("GET")
+     */
+    
+    public function formGetAction() {
+        return $this->render('zadanieBundle:first:form.html.twig');
+    }
+    
+    /**
+     * @Route("/form")
+     * @Method("POST")
+     */
+
+    public function formPostAction() {
+        $response = new Response('<html><body>Formularz przyjęty</html></body>');
         return $response;
     }
 }
