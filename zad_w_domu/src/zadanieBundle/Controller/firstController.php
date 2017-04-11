@@ -15,4 +15,13 @@ class firstController extends Controller
         $response = new Response ('<html><body>Witaj świecie !!</body></html>');
         return $response;
     }
+    
+    /**
+     * @Route("/goodbye/{username}")
+     */
+    
+    public function goodbyeUserAction($username) {
+        $response = new Response('<html><body>Goodbye '.$username.' <body></html>');
+        return $response;
+    }
 }
