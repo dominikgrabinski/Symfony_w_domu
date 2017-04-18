@@ -64,14 +64,32 @@ class firstController extends Controller
      */
 
     public function formPostAction(Request $request) {
-        $request->request->get("text_field");
+        $value = $request->request->get("text_field");
 
-        $response = new Response('<html><body>Tekst z formularza: '.$request.'</body></html>');
+        $response = new Response('<html><body>Tekst z formularza: '.$value.'</body></html>');
         return $response;
     }
     
+    /**
+     * @Route("/setSession/{value}")
+     */
     
+    public function setSessionAction(Request $request, $value) {
+        $request->getSession()->set("usertext", $value);
+        $resp = new Response('<html><body>'.$value.'</body></html>');
+        return $resp; 
+    }
     
+    /**
+     * @Route("/getSession")
+     */
+    
+    public function getSessionAction(Request $request){
+        $getSes = $request->getSession()->get("usertext");
+        $response = new Response('<html><body>Dane z sesji:' .$getSes.'</body></html>');
+        return $response;
+        
+    }
     
 }
 
