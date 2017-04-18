@@ -116,7 +116,7 @@ class firstController extends Controller
     }
     
     /**
-     * @Route("deleteCookie")
+     * @Route("/deleteCookie")
      */
     
     public function deleteCookieAction(Request $request) {
@@ -125,7 +125,60 @@ class firstController extends Controller
         $resp->headers->clearCookie("myCookie");
         
         return $resp;
+   
+    }
+    
+    /**
+     * @Route("/redirectMe")
+     */
+
+    public function redirectMeAction() {
+       // $response = $this->redirect($url);
+       $url = $this->generateUrl('zadanie_first_deletecookie');
+       return $this->redirect($url);
+      //  return $this->redirect('http://127.0.0.1:8000/deleteCookie'); <- to dizała
+    }
+
+/*
+ *   zadanie_first_helloworld     ANY      ANY      ANY    /helloWorld                        
+  zadanie_first_goodbyeuser    ANY      ANY      ANY    /goodbye/{username}                
+  zadanie_first_welcomeuser    ANY      ANY      ANY    /welcome/{name}/{surname}          
+  zadanie_first_showingpost    ANY      ANY      ANY    /showPost/{id}                     
+  zadanie_first_formget        GET      ANY      ANY    /form                              
+  zadanie_first_formpost       POST     ANY      ANY    /form                              
+  zadanie_first_setsession     ANY      ANY      ANY    /setSession/{value}                
+  zadanie_first_getsession     ANY      ANY      ANY    /getSession                        
+  zadanie_first_setcookie      ANY      ANY      ANY    /setCookie/{value}                 
+  zadanie_first_getcookie      ANY      ANY      ANY    /getCookie                         
+  zadanie_first_deletecookie   ANY      ANY      ANY    /deleteCookie                      
+  zadanie_first_redirectme     ANY      ANY      ANY    /redirectMe
+ */
+    
+    /**
+     * @Route ("/showAllLinks")
+     */
+
+    public function showAllLinksAction() {
+        $urlsArray = [];
+        $urlsArray[] = $this->generateUrl('zadanie_first_helloworld');
+        $urlsArray[] = $this->generateUrl('zadanie_first_goodbyeuser', ['username' => 'Dominik']);
+        $urlsArray[] = $this->generateUrl('zadanie_first_welcomeuser', ['name' => 'Domin', 'surname' => 'Grab']);
+        //var_dump($urlsArray);
+        $link = '';
+        foreach ($urlsArray as $url){
+            $link = '<a href="'.$url.'">'.$url.'</a><br>';
+        
+        }
+        $resp = new Response('<html><body>Lista linków: <br>'.$link.' </body></html>');
+        
+        return $resp;
+        
         
     }
-}
+    
+    }
+
+
+
+
 
