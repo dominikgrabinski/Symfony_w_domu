@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Cookie;
 //
 ///**
 // * @Route("/first")
@@ -91,5 +92,40 @@ class firstController extends Controller
         
     }
     
+    /**
+     * @Route("/setCookie/{value}")
+     */
+    
+    public function setCookieAction(Request $req, $value) {
+        $cookie = new Cookie("myCookie", $value, time() + (3600*24));
+        $resp = new Response('<html><body>Ustawienie ciasteczka (całe ciastko) :'.$cookie.'</body></html>');
+        $resp->headers->setCookie($cookie);
+        return $resp;
+    }
+    
+    /**
+     * @Route("/getCookie")
+     */
+    
+    public function getCookieAction(Request $request) {
+        $cookies = $request->cookies->get("myCookie", '[empty]');
+       // $cookieValue = $cookies["myCookie"];
+        $resp = new Response('<html><body>Wartość ciasteczka to: '.$cookies.'</body></html>');
+        return $resp;
+        
+    }
+    
+    /**
+     * @Route("deleteCookie")
+     */
+    
+    public function deleteCookieAction(Request $request) {
+        
+        $resp = new Response('<html><body>Usunięcie cisteczka</body></html>');
+        $resp->headers->clearCookie("myCookie");
+        
+        return $resp;
+        
+    }
 }
 
