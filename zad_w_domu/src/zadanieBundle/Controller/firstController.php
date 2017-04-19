@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 //
 ///**
 // * @Route("/first")
@@ -162,21 +163,35 @@ class firstController extends Controller
         $urlsArray = [];
         $urlsArray[] = $this->generateUrl('zadanie_first_helloworld');
         $urlsArray[] = $this->generateUrl('zadanie_first_goodbyeuser', ['username' => 'Dominik']);
-        $urlsArray[] = $this->generateUrl('zadanie_first_welcomeuser', ['name' => 'Domin', 'surname' => 'Grab']);
+        $urlsArray[] = $this->generateUrl('zadanie_first_welcomeuser', ['name' => 'Domin', 'surname' => 'Grab'], UrlGeneratorInterface::ABSOLUTE_URL);
         //var_dump($urlsArray);
         $link = '';
         foreach ($urlsArray as $url){
             $link = '<a href="'.$url.'">'.$url.'</a><br>';
-        
         }
-        $resp = new Response('<html><body>Lista linków: <br>'.$link.' </body></html>');
         
-        return $resp;
-        
-        
+        return $resp = new Response('<html><body>Lista linków: '.$link.' </body></html>');
+   
     }
     
+    /**
+     * @Route("/show2")
+     */
+    
+    
+    
+    public function show2Action () {
+        $url1 = $this->generateUrl('zadanie_first_helloworld', [], UrlGeneratorInterface::ABSOLUTE_URL);
+        $url2 = $this->generateUrl('zadanie_first_goodbyeuser', ['username' => 'Dominik'], UrlGeneratorInterface::ABSOLUTE_URL);
+        $url3 = $this->generateUrl('zadanie_first_welcomeuser', ['name' => 'Domin', 'surname' => 'Grab'], UrlGeneratorInterface::ABSOLUTE_URL);
+        
+     return $resp = new Response('<html><body>Lista linków: <br>
+             <a href = "'.$url1.'">'.$url1.'</a><br>
+             <a href = "'.$url2.'">'.$url2.'</a><br>
+             <a href = "'.$url3.'">'.$url3.'</a><br>    
+             </body></html>');
     }
+}
 
 
 
