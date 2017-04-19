@@ -40,4 +40,34 @@ class viewsController extends Controller
     public function render3Action() {
         return $this->render('WidokApp/view_ex_a3.html.twig');
     }
+    
+    /**
+     * @Route("/render/{username}")
+     */
+    
+    public function renderUsernameAction($username) {
+        return $this->render('WidokTwigBundle:Widok:view_ex_b1.html.twig', ['username' => $username]);
+        
+    }
+    
+    /**
+     * @Route("/render2/{username}")
+     * @Template("WidokTwigBundle:Widok:view_ex_b1.html.twig")
+     */
+    
+    public function render2UsernameAction($username) {
+        return ['username' => $username];
+    }
+    
+    /**
+     * @Route("/repeatSentece/{n}", defaults={"n":"17"})
+     */
+    
+    public function repeatSentenceAction($n) {
+        return $this->render('WidokTwigBundle:Widok:repeatSentence.html.twig', ['n' => $n]);
+    }
+    
+    
+    
+    
 }
