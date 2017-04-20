@@ -94,7 +94,16 @@ class viewsController extends Controller
     
     public function showArticleAction($n) {
       $artic = Article::GetArticlebyId($n);
-      return ['artic' => $artic];
-        
+      return ['artic' => $artic];   
+    }
+    
+    /**
+     * @Route("/showAllArticles")
+     * @Template()
+     */
+    
+    public function showAllArticlesAction() {
+        $art = Article::GetAllArticles();
+        return ['art' => $art];
     }
 }
