@@ -60,14 +60,30 @@ class viewsController extends Controller
     }
     
     /**
-     * @Route("/repeatSentece/{n}", defaults={"n":"17"})
+     * @Route("/repeatSentence/{n}", defaults={"n":"17"})
+     * @Template()
      */
     
     public function repeatSentenceAction($n) {
-        return $this->render('WidokTwigBundle:Widok:repeatSentence.html.twig', ['n' => $n]);
+        return ['n' => $n];
+       // return $this->render('WidokTwigBundle:Widok:repeatSentence.html.twig', ['n' => $n]);
     }
     
+
+    /**
+     * @Route("createRandoms/{start}/{end}/{n}")
+     * @Template()
+     */
     
-    
+    public function createRandomsAction($start, $end, $n) {
+       // $this->render('WidokTwigBundle:Widok:createRandoms.html.twig', ['start' => $start, 'end' => $end, 'n' => $n]);
+        
+        $forArray = [];
+        for ($i = 1; $i <= $n; $i++) {
+            $forArray[] = rand($start, $end);
+        }
+        
+        return ['forArray'=> $forArray, 'n' => $n];
+    }
     
 }
