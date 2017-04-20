@@ -1,0 +1,14 @@
+{% extends "::base.html.twig"%}
+
+{% block title %} Witaj w widoku dla zadania B3 {% endblock %}
+
+{% block body %}
+    <h1> Witaj w widoku dla zadania B3 </h1>
+    <p> 
+    Liczba powtórzeń wynosi: {{ n }}
+    
+    {% for i in 1..n %}
+        Symfony jest bardzo fajne <br> 
+    {% endfor %}   
+    </p>
+{% endblock %}    
