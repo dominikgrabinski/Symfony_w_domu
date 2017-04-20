@@ -5,6 +5,7 @@ namespace WidokTwigBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use WidokTwigBundle\Entity\Article;
 
 class viewsController extends Controller
 {
@@ -86,4 +87,14 @@ class viewsController extends Controller
         return ['forArray'=> $forArray, 'n' => $n];
     }
     
+    /**
+     * @Route ("/showArticle/{n}")
+     * @Template()
+     */
+    
+    public function showArticleAction($n) {
+      $artic = Article::GetArticlebyId($n);
+      return ['artic' => $artic];
+        
+    }
 }
