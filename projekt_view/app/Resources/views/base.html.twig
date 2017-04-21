@@ -15,14 +15,14 @@
     </head>
     <body>
         <h1>{% block pagetitle %} Linki {% endblock %}</h1> 
-        <a href="{{path('widoktwig_views_index')}}">index</a>
-        <a href="{{path('widoktwig_views_render')}}">render</a>
+        <a href="{{path('widoktwig_views_index')}}">index   </a>
+        <a href="{{path('widoktwig_views_render')}}">render   </a>
         <a href="{{path('widoktwig_views_renderusername', {'username':'Domi'})}}">renderName</a>
-        <a href="{{path('widoktwig_views_render2username', {'username':'Andrzej' })}}"> render 2 </a> 
-        <a href="{{path('widoktwig_views_repeatsentence', {'n':'7'})}}"> repeatSentense </a>
-        <a href="{{path('widoktwig_views_createrandoms', {'start':'3', 'end':'77', 'n':'7'})}}"> randoms </a>
-        <a href="{{path('widoktwig_views_showarticle', {'n':'7'})}}"> show article </a> 
-        <a href="{{path('widoktwig_views_showallarticles')}}"> wszystkie artykuly </a> </br> 
+        <a href="{{path('widoktwig_views_render2username', {'username':'Andrzej' })}}">render 2</a> 
+        <a href="{{path('widoktwig_views_repeatsentence', {'n':'7'})}}">repeatSentense</a>
+        <a href="{{path('widoktwig_views_createrandoms', {'start':'3', 'end':'77', 'n':'7'})}}">randoms</a>
+        <a href="{{path('widoktwig_views_showarticle', {'n':'7'})}}">show article</a> 
+        <a href="{{path('widoktwig_views_showallarticles')}}">wszystkie artykuly</a> </br> 
 {#  widoktwig_views_index             ANY      ANY      ANY    /                                  
   widoktwig_views_render            ANY      ANY      ANY    /render                            
   widoktwig_views_render2           ANY      ANY      ANY    /render2                           
