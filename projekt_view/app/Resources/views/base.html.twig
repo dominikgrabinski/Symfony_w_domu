@@ -2,11 +2,38 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Dominik{% endblock %}</title>
+        {% block stylesheets %}
+        <style>
+            
+        h1 {background-color: green; color: gold}
+        a {font-weight: bold}
+              
+        </style>    
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        <h1>{% block pagetitle %} Linki {% endblock %}</h1> 
+        <a href="{{path('widoktwig_views_index')}}">index</a>
+        <a href="{{path('widoktwig_views_render')}}">render</a>
+        <a href="{{path('widoktwig_views_renderusername', {'username':'Domi'})}}">renderName</a>
+        <a href="{{path('widoktwig_views_render2username', {'username':'Andrzej' })}}"> render 2 </a> 
+        <a href="{{path('widoktwig_views_repeatsentence', {'n':'7'})}}"> repeatSentense </a>
+        <a href="{{path('widoktwig_views_createrandoms', {'start':'3', 'end':'77', 'n':'7'})}}"> randoms </a>
+        <a href="{{path('widoktwig_views_showarticle', {'n':'7'})}}"> show article </a> 
+        <a href="{{path('widoktwig_views_showallarticles')}}"> wszystkie artykuly </a> </br> 
+{#  widoktwig_views_index             ANY      ANY      ANY    /                                  
+  widoktwig_views_render            ANY      ANY      ANY    /render                            
+  widoktwig_views_render2           ANY      ANY      ANY    /render2                           
+  widoktwig_views_render3           ANY      ANY      ANY    /render3                           
+  widoktwig_views_renderusername    ANY      ANY      ANY    /render/{username}                 
+  widoktwig_views_render2username   ANY      ANY      ANY    /render2/{username}                
+  widoktwig_views_repeatsentence    ANY      ANY      ANY    /repeatSentence/{n}                
+  widoktwig_views_createrandoms     ANY      ANY      ANY    /createRandoms/{start}/{end}/{n}   
+  widoktwig_views_showarticle       ANY      ANY      ANY    /showArticle/{n}                   
+  widoktwig_views_showallarticles   ANY      ANY      ANY    /showAllArticles                   
+         #}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

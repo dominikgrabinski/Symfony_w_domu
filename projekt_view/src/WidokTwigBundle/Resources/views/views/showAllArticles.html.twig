@@ -1,7 +1,10 @@
-{% for num in art %}
-    
+{% extends "base.html.twig" %} 
+{% block title %} create Randoms {% endblock %}
+{% block body %}
 
+{% for num in art %}
 Numer id:{{ num.id }} <br>
 Tytuł: {{ num.title }} <br>
 Tekts: {{ num.articleText }}
 {% endfor %}
+{% endblock %}

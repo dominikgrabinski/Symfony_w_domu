@@ -1,7 +1,10 @@
+{% extends "base.html.twig" %} 
+{% block title %} create Randoms {% endblock %}
+{% block body %}
 {% if n > 0 %}
 {% for number in forArray %}
-    {{ number }} <br>
+   {{ number }} <br>
     {% endfor %}
     {% else %} Podaj liczbę większą od 0
         {% endif %}
-        
+{% endblock %}        
