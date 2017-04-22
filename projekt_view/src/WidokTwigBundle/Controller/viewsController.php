@@ -105,5 +105,7 @@ class viewsController extends Controller
     public function showAllArticlesAction() {
         $art = Article::GetAllArticles();
         return ['art' => $art];
+        
+        
     }
 }
