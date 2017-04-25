@@ -125,6 +125,7 @@ class UserGroupController extends Controller
             ];
     }
     
+    
     /**
      * @Route("/post")
      * @Template()
@@ -132,6 +133,7 @@ class UserGroupController extends Controller
     public function postIndexAction(){
         return ['posts'=>$this->getDoctrine()->getRepository("CodersLabBundle:Post")->findAll()];
     }
+    
     
     /**
      * @Route("/post/{id}",name="showPost")
