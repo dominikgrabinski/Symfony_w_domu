@@ -1,0 +1,9 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}CodersLabBundle:User:showAll{% endblock %}
+
+{% block body %}
+    {% for user in users %}
+        {{user.nick}} <br/>
+    {% endfor %}
+{% endblock %}

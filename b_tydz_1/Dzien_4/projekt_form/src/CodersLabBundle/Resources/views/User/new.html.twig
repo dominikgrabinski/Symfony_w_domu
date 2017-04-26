@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}CodersLabBundle:User:new{% endblock %}
+
+{% block body %}
+    {{ form_start(newUserForm) }}
+        <div style="background: #ddffdd;">
+            {{ form_label(newUserForm.nick) }}
+            {{ form_widget(newUserForm.nick) }}
+        </div>
+        <div style="background: #ffdddd;">
+            {{ form_label(newUserForm.tweet) }}
+            {{ form_widget(newUserForm.tweet) }}
+        </div>
+    {{ form_end(newUserForm) }}
+{% endblock %}

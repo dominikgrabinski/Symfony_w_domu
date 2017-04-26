@@ -1,0 +1,9 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}CodersLabBundle:Autor:showAll{% endblock %}
+
+{% block body %}
+    {% for autor in autors %}
+        {{autor.name}} <br/>
+    {% endfor %}
+{% endblock %}

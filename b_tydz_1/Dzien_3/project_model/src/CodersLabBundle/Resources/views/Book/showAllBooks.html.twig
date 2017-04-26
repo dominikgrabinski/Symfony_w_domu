@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ul>
+    {% for book in books %}
+        <li>
+            {{book.title}} - <a href="{{
+
+            path(
+                "showBook",
+                {
+                    "id":book.id
+                }
+            )
+
+            }}">[show more]</a>
+            <a href="{{
+
+            path(
+                "deleteBook",
+                {
+                    "id":book.id
+                }
+            )
+
+            }}">[delete this book]</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

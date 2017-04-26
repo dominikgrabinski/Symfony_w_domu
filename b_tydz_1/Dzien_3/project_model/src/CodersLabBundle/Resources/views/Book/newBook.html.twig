@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <form method="post" action="{{path('createBook')}}">
+        title:<br/>
+        <input type="text" name="title" /><br/>
+        description: <br/>
+        <textarea name="description"></textarea><br/>
+        rating:<br/>
+        <input type="text" name="rating" /><br/>
+        <select name="autor">
+            {% for autor in autors %}
+                <option value="{{autor.id}}">{{autor.name}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="ADD" />
+    </form>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}CodersLabBundle:Autor:show{% endblock %}
+
+{% block body %}
+    Autor id: {{autor.id}}<br/>
+    Autor name: {{autor.name}}<br/>
+    Autor description: {{autor.description}}<br/>
+    Books quantity: {{ autor.books|length }}
+{% endblock %}

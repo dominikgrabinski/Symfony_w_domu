@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    Title: {{book.title}}<br/>
+    Description: {{book.description}}<br/>
+    Rating: {{book.rating}}<br/>
+    Autor: <a href="{{
+        path(
+            "coderslab_autor_show",
+            {
+                "id":book.autor.id
+            }
+        )
+    }}">{{book.autor.name}}</a> <br/>
+{% endblock %}

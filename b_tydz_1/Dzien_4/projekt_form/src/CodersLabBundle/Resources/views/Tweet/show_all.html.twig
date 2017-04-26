@@ -1,0 +1,10 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}CodersLabBundle:Tweet:showAll{% endblock %}
+
+{% block body %}
+    <h3>All tweets:</h3>
+    {% for tweet in tweets %}
+        {{ tweet }}<hr/>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% set n=n|default(0) %}
+Ilość: {{ n }}
+
+
+Losowanie z <{{start}},{{end}}> {{ elementQuantity }} elementów.
+<hr/>
+{% for element in randomArray %}
+    {{element}} <br/>
+{% else %}Array is empty!!!{% endfor %}

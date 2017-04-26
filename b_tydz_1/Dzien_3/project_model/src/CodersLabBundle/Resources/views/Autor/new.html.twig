@@ -1,0 +1,13 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}CodersLabBundle:Autor:new{% endblock %}
+
+{% block body %}
+    <form method="post" action="{{path('coderslab_autor_create')}}">
+        name:<br/>
+        <input type="text" name="name" /><br/>
+        description: <br/>
+        <textarea name="description"></textarea><br/>
+        <input type="submit" value="ADD" />
+    </form>
+{% endblock %}

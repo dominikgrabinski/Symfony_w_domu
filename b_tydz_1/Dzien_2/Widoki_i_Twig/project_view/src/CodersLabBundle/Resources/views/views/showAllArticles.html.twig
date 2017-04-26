@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block controllerName %}viwesController{% endblock %}
+
+{% block body %}
+    {% for art in articles %}
+        {{
+            include(
+                'CodersLabBundle:views:showArticle.html.twig',
+                {
+                    'article': art
+                }
+            )
+        }}
+        <hr />
+    {% endfor %}
+{% endblock %}
