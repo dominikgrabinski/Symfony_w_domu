@@ -93,7 +93,7 @@ class viewsController extends Controller
      */
     
     public function showArticleAction($n) {
-      $artic = Article::GetArticlebyId($n);
+        $artic = Article::GetArticlebyId($n);
       return ['artic' => $artic];   
     }
     
@@ -103,6 +103,7 @@ class viewsController extends Controller
      */
     
     public function showAllArticlesAction() {
+            
         $art = Article::GetAllArticles();
         return ['art' => $art];
         
