@@ -76,6 +76,7 @@ class viewsController extends Controller
      * @Template()
      */
     
+    
     public function createRandomsAction($start, $end, $n) {
        // $this->render('WidokTwigBundle:Widok:createRandoms.html.twig', ['start' => $start, 'end' => $end, 'n' => $n]);
         
