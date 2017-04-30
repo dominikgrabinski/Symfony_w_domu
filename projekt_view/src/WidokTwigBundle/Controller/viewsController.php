@@ -88,7 +88,6 @@ class viewsController extends Controller
         return ['forArray'=> $forArray, 'n' => $n];
     }
    
-    
     /**
      * @Route ("/showArticle/{n}")
      * @Template()
