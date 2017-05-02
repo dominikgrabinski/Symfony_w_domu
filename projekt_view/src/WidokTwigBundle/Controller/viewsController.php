@@ -107,6 +107,7 @@ class viewsController extends Controller
             
         $art = Article::GetAllArticles();
         return ['art' => $art];
-   
+
+        
     }
 }
