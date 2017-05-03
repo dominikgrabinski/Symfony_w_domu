@@ -109,5 +109,6 @@ class viewsController extends Controller
         return ['art' => $art];
 
         
+        
     }
 }
