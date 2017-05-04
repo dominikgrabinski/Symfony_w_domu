@@ -114,6 +114,7 @@ class firstController extends Controller
         $resp = new Response('<html><body>Wartość ciasteczka to: '.$cookies.'</body></html>');
         return $resp;
         
+        
     }
     
     /**
