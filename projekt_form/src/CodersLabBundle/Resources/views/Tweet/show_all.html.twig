@@ -1,0 +1,9 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}CodersLabBundle:Tweet:showAll{% endblock %}
+
+{% block body %}
+    {% for i in wszystkie %}
+    {{ i }} <br>
+    {% endfor %}
+{% endblock %}
