@@ -14,6 +14,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
  */
 class BookController extends Controller
 {
+    
     /**
      * Lists all book entities.
      *
