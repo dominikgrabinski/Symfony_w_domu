@@ -127,6 +127,7 @@ class AuthorController extends Controller
      */
     private function createDeleteForm(Author $author)
     {
+        
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('author_delete', array('id' => $author->getId())))
             ->setMethod('DELETE')
