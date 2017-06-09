@@ -11,7 +11,6 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 class BookType extends AbstractType
 {
     
-    
     /**
      * {@inheritdoc}
      */
