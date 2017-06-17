@@ -15,7 +15,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class AuthorController extends Controller
 {
-    
     /**
      * Lists all author entities.
      *
