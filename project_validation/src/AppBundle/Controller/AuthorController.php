@@ -14,8 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
  * @Route("author")
  */
 class AuthorController extends Controller
-{
-    
+{    
     /**
      * Lists all author entities.
      *
